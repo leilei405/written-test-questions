@@ -37,3 +37,20 @@ function sortVersions(versions) {
 const versions = ["0.1.1", "2.3.3", "0.302.1", "4.2", "4.3.5", "4.3.4.5"];
 const sortedVersions = sortVersions(versions);
 console.log(sortedVersions, "======"); // ['4.3.5', '4.3.4.5', '4.2',' '2.3.3, '0.302.1', '0.1.1']
+
+function sortFn(a, b) {
+  const paramA = a.split(".");
+  const paramB = b.split(".");
+  const maxLength = Math.max(paramA.length, paramB.length);
+
+  for (let i = 0; i < maxLength; i++) {
+    const A1 = parseInt(paramA[i] || 0);
+    const B1 = parseInt(paramB[i] || 0);
+    if (A1 > B1) {
+      return -1;
+    } else if (A1 < B1) {
+      return 1;
+    }
+  }
+  return 0;
+}
