@@ -47,9 +47,9 @@ function sortFn(a, b) {
     const A1 = parseInt(paramA[i] || 0);
     const B1 = parseInt(paramB[i] || 0);
     if (A1 > B1) {
-      return -1;
-    } else if (A1 < B1) {
       return 1;
+    } else if (A1 < B1) {
+      return -1;
     }
   }
   return 0;
