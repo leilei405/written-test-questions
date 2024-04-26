@@ -18,6 +18,8 @@ function fetchData(url, maxCount) {
   });
 }
 
+// https://api2.com mock 接口
+// https://jsonplaceholder.typicode.com/todos/${1}  真实请求接口
 fetchData(`https://jsonplaceholder.typicode.com/todos/${1}`, 1)
   .then((res) => {
     if (res) {

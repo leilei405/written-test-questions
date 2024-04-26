@@ -30,7 +30,11 @@ function fetchDataWithRetry(url, maxAttempts = 3, currentAttempts = 1) {
 function fetchData(urls, maxAttempts = 3) {
   return Promise.all(urls.map((url) => fetchDataWithRetry(url, maxAttempts)));
 }
-const urls = ["https://api1.com", "https://api2.com", "https://api3.com"];
+const urls = [
+  `https://jsonplaceholder.typicode.com/todos/${1}`,
+  "https://api2.com",
+  "https://api3.com",
+];
 
 // 最多请求三次 使用
 fetchData(urls)
